@@ -34,13 +34,17 @@ int cbinsearch(int *arr, int size, int value) {
                 y++;
         }
         return y;
-    }
-    else {
+    } else {
         return 0;
     }
 }
 int countPairs3(int *arr, int len, int value) {
-   int pairs = 0;
-    pairs += cbinsearch(arr, len, value - *arr);
-   return pairs;
+  int pairs = 0;
+    int i = 0;
+    while ( i < len) {
+        pairs += cbinsearch(arr, len, value - arr[i]);
+        i++;
+        arr++;
+    }
+    return pairs;
 }
