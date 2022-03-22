@@ -43,8 +43,8 @@ int countPairs3(int *arr, int len, int value) {
     int pairs = 0;
     int i = 0;
     while (i < len) {
-        pairs += cbinsearch(arr, len, value - *arr);
-        i++;  
+        pairs += cbinsearch(arr, len, value - arr[0]);
+        i++;
         arr++;
     }
     return pairs;
