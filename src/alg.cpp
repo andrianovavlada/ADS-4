@@ -26,8 +26,8 @@ int countPairs2(int *arr, int len, int value) {
     }
     return pairs;
 }
-int cbinsearch(int *arr, int size, int valueint value, int l) {
-   int pairs = 0, i = l, j = size - 1, mid = 0;
+int cbinsearch(int *arr, int size, int value, int l) {
+  int pairs = 0, i = l, j = size - 1, mid = 0;
     while (i < j) {
         mid = i + (j - i) / 2;
        if (arr[mid] == value && mid != l) {
