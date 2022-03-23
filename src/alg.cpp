@@ -32,11 +32,11 @@ int cbinsearch(int *arr, int size, int value, int l) {
         mid = i + (j - i) / 2;
        if (arr[mid] == value && mid != l) {
             pairs++;
-            int r = mid, l = mid;
+            int r = mid, t = mid;
                while (arr[r--] == value && r > l) {
                     pairs++;
                 }
-                while (arr[l++] == value) {
+                while (arr[t++] == value) {
                     pairs++;
                 }
                 return pairs;
@@ -48,11 +48,12 @@ int cbinsearch(int *arr, int size, int value, int l) {
      }
         return 0;
     }
-int countPairs3(int *arr, int len, int value) {
+int countPairs3(int* arr, int len, int value) {
     int pairs = 0;
     int i = 0;
-    for (int i = 0; i < len; i++) {
-        pairs += cbinsearch(arr, len, value - arr[i], i);  
+    while (i < len) {
+        pairs += cbinsearch(arr, len, value - arr[i], i);
+        i++;
     }
     return pairs;
 }
